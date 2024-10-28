@@ -1,0 +1,42 @@
+
+do {
+    respuesta = parseInt(prompt("Ingrese a que moneda quiere convertir sus USD:\n-1 Pesos \n-2 Euros \n-3 Reales \n-4 Salir"))
+    let total = 0
+
+    if (respuesta === 1){
+        cantidad = pedirUSD("Ingrese la cantidad de USD")
+        if (isNaN(cantidad) || cantidad < 0){
+            alert("Monto invalida")
+        }
+        else{
+            total = (cantidad * 1200).toFixed(2)
+            alert("Usted convirtio: " + cantidad + "USD a: " + total + " Pesos")
+        }
+    }
+    else if (respuesta === 2){
+        cantidad = pedirUSD("Ingrese la cantidad de USD")
+        if (isNaN(cantidad) || cantidad < 0){
+            alert("Monto invalida")
+        }
+        else{
+            total = (cantidad * 0.92).toFixed(2)
+            alert("Usted convirtio: " + cantidad + "USD a: " + total + " Euros")
+        }
+    }
+    else if (respuesta === 3){
+        cantidad = pedirUSD("Ingrese la cantidad de USD")
+        if (isNaN(cantidad) || cantidad < 0){
+            alert("Monto invalida")
+        }
+        else{
+            total = (cantidad * 5.71).toFixed(2)
+            alert("Usted convirtio: " + cantidad + "USD a: " + total + " Reales")
+        }
+    }
+    else if (isNaN(respuesta) || respuesta < 0 || respuesta > 4)
+        alert ("Respuesta invalida")
+} while (respuesta !== 4);
+
+function pedirUSD (mensaje){
+    return parseInt(prompt(mensaje))
+}
